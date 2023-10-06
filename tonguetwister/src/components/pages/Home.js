@@ -1,5 +1,5 @@
 import React from "react";
-import App from "../App/App";
+import "../App/App.css";
 import { Hero } from "../Hero/Hero";
 
 

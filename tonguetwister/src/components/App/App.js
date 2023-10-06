@@ -10,10 +10,10 @@ function App() {
     <>
       <Router>
         <Navbar />
-        <Hero />
-        {/* <Switch>
+         <Hero /> 
+         {/* <Switch>
           <Route path='/' exact component={Home} />
-        </Switch> */}
+        </Switch>  */}
       </Router>
     </>
   );
