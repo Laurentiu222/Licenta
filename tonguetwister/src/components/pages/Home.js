@@ -3,11 +3,13 @@ import "../App/App.css";
 import { Hero } from "../Hero/Hero";
 
 
-export function Home(){
+export default function Home() {
 
-  return(
+  return (
     <>
-    <Hero />
+      <div>
+        <Hero />
+      </div>
     </>
   )
 }
