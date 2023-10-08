@@ -1,7 +1,7 @@
 import React from "react";
 import "../App/App.css";
 import { Hero } from "../Hero/Hero";
-
+import Card from "../Card/Card";
 
 export default function Home() {
 
@@ -9,6 +9,7 @@ export default function Home() {
     <>
       <div>
         <Hero />
+        <Card />
       </div>
     </>
   )
