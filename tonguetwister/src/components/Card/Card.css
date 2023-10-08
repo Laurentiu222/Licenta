@@ -1,6 +1,5 @@
-.card {
+.cards {
   padding: 7rem;
-  background: #fff;
   background-color: #242424;
 }
 
@@ -9,66 +8,70 @@ h1 {
   color: blueviolet;
 }
 
-.card--container {
+.cards__container {
   display: flex;
-  flex-wrap: wrap; /* Use flex-wrap to wrap items to a new row */
-  justify-content: center; /* Center the items horizontally */
+  flex-flow: column;
   align-items: center;
-  width: 100%;
+  max-width: 1120px;
+  width: 90%;
   margin: 0 auto;
 }
 
-.wrapper {
+.cards__wrapper {
   position: relative;
   margin: 50px 0 45px;
 }
 
-.cards--items {
+.cards__items {
   margin-bottom: 24px;
 }
 
-.card-item {
-  flex: 0 1 calc(33.33% - 2rem); /* Set the width to 33.33% with a little margin */
+.cards__item {
+  display: flex;
+  flex: 1;
   margin: 0 1rem;
   border-radius: 10px;
-  width: 300px; /* Adjust the width as needed */
-  height: 400px; /* Adjust the height as needed */
 }
 
-.card-item-link {
+.cards__item__link {
   display: flex;
   flex-flow: column;
   width: 100%;
-  box-shadow: 0 6px 20px rgba(56, 126, 255, 0.795);
-  -webkit-filter: drop-shadow(0 6px 20px rgba(56, 125, 255, 0.017));
+  box-shadow: 0 6px 20px rgba(138, 43, 226, 0.842);
+  -webkit-filter: drop-shadow(0 6px 20px rgba(138, 43, 226, 0));
   filter: drop-shadow(0 6px 20px rgba(56, 125, 255, 0.017));
   border-radius: 10px;
   overflow: hidden;
   text-decoration: none;
 }
 
-.card-item-pic-wrap {
+.cards__item__pic-wrap {
   position: relative;
   width: 100%;
   padding-top: 67%;
   overflow: hidden;
 }
 
-.card-item-pic-wrap::after {
+.fade-img {
+  animation-name: fade-img;
+  animation-duration: 2s;
+}
+
+.cards__item__pic-wrap::after {
   content: attr(data-category);
   position: absolute;
   bottom: 0;
   margin-left: 10px;
   padding: 6px 8px;
-  max-width: calc(100% - 60px);
+  max-width: calc((100%) - 60px);
   font-size: 12px;
   font-weight: 700;
-  color: blueviolet;
+  color: #242424;
   background-color: blueviolet;
   box-sizing: border-box;
 }
 
-.card-item-img {
+.cards__item__img {
   position: absolute;
   top: 0;
   right: 0;
@@ -83,16 +86,34 @@ h1 {
   transition: all 0.2s linear;
 }
 
-.card-item-img:hover {
+.cards__item__img:hover {
   transform: scale(1.1);
 }
 
-.card-item-info {
+.cards__item__info {
   padding: 20px 30px 30px;
 }
 
-.card-item-text {
-  color: #252e48;
+.cards__item__text {
+  color: blueviolet;
   font-size: 18px;
   line-height: 24px;
+}
+
+@media only screen and (min-width: 1200px) {
+  .content__blog__container {
+    width: 84%;
+  }
+}
+
+@media only screen and (min-width: 1024px) {
+  .cards__items {
+    display: flex;
+  }
+}
+
+@media only screen and (max-width: 1024px) {
+  .cards__item {
+    margin-bottom: 2rem;
+  }
 }
