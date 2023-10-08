@@ -1,18 +1,20 @@
-.cards {
-  padding: 4rem;
+.card {
+  padding: 7rem;
   background: #fff;
+  background-color: #242424;
 }
 
 h1 {
   text-align: center;
+  color: blueviolet;
 }
 
-.cards--container {
+.card--container {
   display: flex;
-  flex-flow: column;
+  flex-wrap: wrap; /* Use flex-wrap to wrap items to a new row */
+  justify-content: center; /* Center the items horizontally */
   align-items: center;
-  max-width: 1120px;
-  width: 90%;
+  width: 100%;
   margin: 0 auto;
 }
 
@@ -26,17 +28,18 @@ h1 {
 }
 
 .card-item {
-  display: flex;
-  flex: 1;
+  flex: 0 1 calc(33.33% - 2rem); /* Set the width to 33.33% with a little margin */
   margin: 0 1rem;
   border-radius: 10px;
+  width: 300px; /* Adjust the width as needed */
+  height: 400px; /* Adjust the height as needed */
 }
 
 .card-item-link {
   display: flex;
   flex-flow: column;
   width: 100%;
-  box-shadow: 0 6px 20px rgba(56, 125, 255, 0.17);
+  box-shadow: 0 6px 20px rgba(56, 126, 255, 0.795);
   -webkit-filter: drop-shadow(0 6px 20px rgba(56, 125, 255, 0.017));
   filter: drop-shadow(0 6px 20px rgba(56, 125, 255, 0.017));
   border-radius: 10px;
@@ -49,11 +52,6 @@ h1 {
   width: 100%;
   padding-top: 67%;
   overflow: hidden;
-}
-
-.fade-img {
-  animation-name: fade-img;
-  animation-duration: 2s;
 }
 
 .card-item-pic-wrap::after {
@@ -89,30 +87,12 @@ h1 {
   transform: scale(1.1);
 }
 
-card-item-info {
+.card-item-info {
   padding: 20px 30px 30px;
 }
 
-card-item-text {
+.card-item-text {
   color: #252e48;
   font-size: 18px;
   line-height: 24px;
-}
-
-@media only screen and (min-width: 1200px) {
-  .content-blog-container {
-    width: 84%;
-  }
-}
-
-@media only screen and (min-width: 1024px) {
-  .cards--items {
-    display: flex;
-  }
-}
-
-@media only screen and (max-width: 1024px) {
-  .card-item {
-    margin-bottom: 2rem;
-  }
 }
