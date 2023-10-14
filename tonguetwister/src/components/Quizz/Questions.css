@@ -1,0 +1,126 @@
+body {
+  background-color: #242424;
+  margin: 0;
+  padding: 0;
+}
+
+.question-container {
+  text-align: center;
+}
+
+.questions-card {
+  background-color: white;
+  padding: 16px;
+  width: 80%;
+  border-radius: 16px;
+  box-shadow: rgba(50, 50, 93, 0.93) 0px 30px 60px -12px,
+    rgba(0, 0, 0, 0.3) 0px 18px 36px -18px;
+  color: blueviolet;
+  width: 80%;
+  max-width: 800px; /* Added a max-width for responsiveness */
+  margin: 0 auto; /* Center the card horizontally */
+}
+
+.question-text {
+  color: blueviolet;
+  font-size: 24px;
+}
+
+.question {
+  color: blueviolet;
+  margin: 0 auto;
+}
+
+.quizz-list {
+  list-style: none;
+  width: 90%; /* Adjusted the width for responsiveness */
+  max-width: 400px; /* Added max-width for responsiveness */
+  margin: 0 auto;
+  border: blueviolet 2px dotted;
+  border-radius: 10px;
+  padding: 15px;
+}
+
+.quizz-item {
+  padding: 16px;
+  border: 3px solid white;
+  border-radius: 20px;
+  font-size: 1.2rem;
+  margin-top: 8px;
+  text-align: center;
+}
+
+.final-results {
+  margin: 0 auto;
+  width: 80%; /* Added width for responsiveness */
+  max-width: 400px; /* Added max-width for responsiveness */
+  height: auto;
+  margin-top: 64px;
+  background-color: #242424;
+  padding: 16px;
+  border-radius: 16px;
+  color: white;
+}
+
+.question-footer {
+  color: blueviolet;
+}
+
+.restart {
+  background-color: blueviolet;
+  border: none;
+  color: white;
+  padding: 16px 24px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  font-weight: bold;
+  border-radius: 24px;
+}
+
+.question-level {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.btn-level {
+  margin: 20px; /* Reduced margin for responsiveness */
+  width: 50%; /* Adjusted the width for responsiveness */
+  max-width: 400px; /* Added max-width for responsiveness */
+  background-color: #242424;
+  color: blueviolet;
+  border-radius: 15px;
+  font-size: 2rem;
+}
+
+.btn-level:hover {
+  font-size: 2.5rem;
+}
+
+.restart:hover {
+  font-size: 24px;
+}
+
+/* Media query for smaller screens */
+@media (max-width: 600px) {
+  .questions-card {
+    width: 90%;
+    max-width: 100%;
+  }
+  .quizz-list {
+    width: 95%;
+    max-width: 100%;
+  }
+  .final-results {
+    width: 90%;
+    max-width: 100%;
+  }
+  .btn-level {
+    width: 80%;
+    max-width: 100%;
+  }
+}
