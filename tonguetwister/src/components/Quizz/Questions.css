@@ -48,6 +48,13 @@ body {
   font-size: 1.2rem;
   margin-top: 8px;
   text-align: center;
+  cursor: pointer;
+}
+
+.quizz-item:hover{
+  background-color: white;
+  color:#242424;
+  font-size: 1.4rem;
 }
 
 .final-results {
