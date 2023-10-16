@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import "./Questions.css";
 
 export default function Questions() {
@@ -132,6 +133,9 @@ export default function Questions() {
             </h2>
             <button className="restart" onClick={restartGame}>
               Restart Quiz
+            </button>
+            <button className="restart">
+              <Link to="/Levels">Levels</Link>
             </button>
           </div>
         ) : (

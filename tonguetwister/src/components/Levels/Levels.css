@@ -1,0 +1,50 @@
+body {
+    background-color: #242424;
+    margin: 0;
+    padding: 0;
+  }
+.question-level {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .btn-level {
+    margin: 20px; /* Reduced margin for responsiveness */
+    width: 100%; /* Adjusted the width for responsiveness */
+    max-width: 400px; /* Added max-width for responsiveness */
+    background-color: #242424;
+    color: blueviolet;
+    border-radius: 15px;
+    font-size: 2rem;
+  }
+  
+  .btn-level:hover {
+    font-size: 2.5rem;
+  }
+  
+  .restart:hover {
+    font-size: 24px;
+  }
+  
+  /* Media query for smaller screens */
+  @media (max-width: 600px) {
+    .questions-card {
+      width: 90%;
+      max-width: 100%;
+    }
+    .quizz-list {
+      width: 95%;
+      max-width: 100%;
+    }
+    .final-results {
+      width: 90%;
+      max-width: 100%;
+    }
+    .btn-level {
+      width: 80%;
+      max-width: 100%;
+    }
+  }

@@ -1,12 +1,12 @@
 import React from "react";
-import Questions from "../Quizz/Questions";
+import Levels from "../Levels/Levels";
 
 export default function Quizz() {
 
   return (
     <>
       <div>
-        <Questions />
+        <Levels />
       </div>
     </>
   )
