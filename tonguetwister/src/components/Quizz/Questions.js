@@ -135,7 +135,7 @@ export default function Questions() {
               Restart Quiz
             </button>
             <button className="restart">
-              <Link to="/Levels">Levels</Link>
+              <Link to="/levels">Levels</Link>
             </button>
           </div>
         ) : (

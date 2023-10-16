@@ -18,7 +18,8 @@ function App() {
           <Route path="/Quizz" element={<Quizz />} />
           <Route path="/" element={<Levels />} />
           <Route path="/questions" element={<Questions />} />
-          <Route path="/intermidiate" element={<Intermidate />} />
+          <Route path="/intermediate" element={<Intermidate />} />
+          <Route path="/levels" element={<Levels />} />
         </Routes>
       </Router>
     </>
