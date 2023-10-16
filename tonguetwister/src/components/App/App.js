@@ -7,6 +7,7 @@ import './App.css';
 import Levels from '../Levels/Levels';
 import Questions from '../Quizz/Questions';
 import Intermidate from '../Quizz/Intermidate';
+import Advenced from '../Quizz/Advenced';
 function App() {
   return (
     <>
@@ -19,6 +20,7 @@ function App() {
           <Route path="/" element={<Levels />} />
           <Route path="/questions" element={<Questions />} />
           <Route path="/intermediate" element={<Intermidate />} />
+          <Route path="/Advance" element={<Advenced />} />
           <Route path="/levels" element={<Levels />} />
         </Routes>
       </Router>
