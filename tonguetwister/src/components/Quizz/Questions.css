@@ -92,6 +92,8 @@ body {
   font-size: 24px;
 }
 
+
+
 /* Media query for smaller screens */
 @media (max-width: 600px) {
   .questions-card {

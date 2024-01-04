@@ -1,13 +1,16 @@
 import React from 'react';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Navbar from '../Navbar/Navbar';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Home from '../pages/Home';
 import Quizz from '../pages/Quizz';
-import './App.css';
+import LearnLinker from '../pages/LearnLinker';
 import Levels from '../Levels/Levels';
 import Questions from '../Quizz/Questions';
 import Intermidate from '../Quizz/Intermidate';
 import Advenced from '../Quizz/Advenced';
+import Learn from '../Learn/Learn';
+import Signup from '../Users/Signup';
+
 function App() {
   return (
     <>
@@ -17,11 +20,13 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/Home" element={<Home />} />
           <Route path="/Quizz" element={<Quizz />} />
-          <Route path="/" element={<Levels />} />
-          <Route path="/questions" element={<Questions />} />
-          <Route path="/intermediate" element={<Intermidate />} />
+          <Route path="/Learn" element={<Learn />} />
+          <Route path="/Levels" element={<Levels />} />
+          <Route path="/Questions" element={<Questions />} />
+          <Route path="/Intermediate" element={<Intermidate />} />
           <Route path="/Advance" element={<Advenced />} />
-          <Route path="/levels" element={<Levels />} />
+          <Route path="/LearnLinker" element={<LearnLinker />} />
+          <Route path="/Signup" element={<Signup />} />
         </Routes>
       </Router>
     </>
