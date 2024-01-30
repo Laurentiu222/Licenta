@@ -3,7 +3,6 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Navbar from '../Navbar/Navbar';
 import Home from '../pages/Home';
 import Quizz from '../pages/Quizz';
-import LearnLinker from '../pages/LearnLinker';
 import Levels from '../Levels/Levels';
 import Questions from '../Quizz/Questions';
 import Intermidate from '../Quizz/Intermidate';
@@ -24,8 +23,7 @@ function App() {
           <Route path="/Levels" element={<Levels />} />
           <Route path="/Questions" element={<Questions />} />
           <Route path="/Intermediate" element={<Intermidate />} />
-          <Route path="/Advance" element={<Advenced />} />
-          <Route path="/LearnLinker" element={<LearnLinker />} />
+          <Route path="/Advance" element={<Advenced />} />       
           <Route path="/Signup" element={<Signup />} />
         </Routes>
       </Router>

@@ -23,28 +23,42 @@ app.use(passport.session());
 
 passport.use(new LocalStrategy(
   (username, password, done) => {
+    console.log('LocalStrategy callback triggered');
+    
     db.query('SELECT * FROM users WHERE username = ?', [username], (err, results) => {
       if (err) {
+        console.error(err);
         return done(err);
       }
-
+      
       if (results.length === 0) {
+        console.log('User not found');
         return done(null, false, { message: 'Incorrect username.' });
       }
 
       const user = results[0];
+      console.log('User found:', user);
 
       if (!bcrypt.compareSync(password, user.password)) {
+        console.log('Incorrect password');
         return done(null, false, { message: 'Incorrect password.' });
       }
 
+      console.log('Login successful');
       return done(null, user);
     });
   }
 ));
 
 passport.serializeUser((user, done) => {
-  done(null, user.id);
+  console.log('Serializing user:', user);
+
+  if (user.user_id) {
+    done(null, user.user_id);
+  } else {
+    console.error('User object does not have a valid id:', user);
+    done(new Error('User object does not have a valid id'));
+  }
 });
 
 passport.deserializeUser((id, done) => {
@@ -56,9 +70,33 @@ passport.deserializeUser((id, done) => {
     done(null, user);
   });
 });
-app.get('/', (req, res) => {
-  res.send('Welcome to the Tongue Twister backend server!');
+
+// Routes
+app.post('/api/login', (req, res, next) => {
+  passport.authenticate('local', (err, user, info) => {
+    if (err) {
+      return res.status(500).json({ success: false, message: 'Internal server error' });
+    }
+    if (!user) {
+      return res.status(401).json({ success: false, message: 'Incorrect username or password' });
+    }
+
+    req.logIn(user, (err) => {
+      if (err) {
+        return res.status(500).json({ success: false, message: 'Error during login' });
+      }
+
+      return res.status(200).json({
+        success: true,
+        message: 'Login successful',
+        user: req.user
+      });
+    });
+  })(req, res, next);
 });
+
+
+
 app.post('/api/register', async (req, res) => {
   const { username, password, email } = req.body;
 
@@ -77,9 +115,8 @@ app.post('/api/register', async (req, res) => {
   res.json({ message: 'User registered successfully.' });
 });
 
-app.post('/api/login', passport.authenticate('local'), (req, res) => {
-  // Authentication successful, return user information
-  res.json(req.user);
+app.get('/', (req, res) => {
+  res.send('Welcome to the Tongue Twister backend server!');
 });
 
 app.listen(8081, () => {

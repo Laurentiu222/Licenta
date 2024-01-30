@@ -1,10 +1,12 @@
+// Login.js
 import React, { useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
+
 
 const Login = () => {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
-  const navigate = useNavigate();  // Use useNavigate instead of useHistory
+  const navigate = useNavigate();
 
   const handleLogin = async () => {
     try {
@@ -19,10 +21,8 @@ const Login = () => {
       const data = await response.json();
 
       if (response.ok) {
-        // Successful login, navigate to home or another page
-        navigate('/home');  // Use navigate instead of history.push
+        navigate('/home');
       } else {
-        // Handle login failure, e.g., display an error message
         console.error(data.message);
       }
     } catch (error) {
@@ -31,7 +31,7 @@ const Login = () => {
   };
 
   return (
-    <div>
+    <div className="form-box"> 
       <h2>Login</h2>
       <form>
         <label htmlFor="username">Username:</label>
@@ -40,6 +40,7 @@ const Login = () => {
           id="username"
           value={username}
           onChange={(e) => setUsername(e.target.value)}
+          className="inputbox"
         />
 
         <label htmlFor="password">Password:</label>
@@ -48,14 +49,13 @@ const Login = () => {
           id="password"
           value={password}
           onChange={(e) => setPassword(e.target.value)}
+          className="inputbox" 
         />
 
         <button type="button" onClick={handleLogin}>
           Login
         </button>
       </form>
-
-     
     </div>
   );
 };

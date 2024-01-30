@@ -23,9 +23,9 @@ function Card() {
             />
             <CardItem
               src='img\blake-cheek-YJ1HGUZc668-unsplash.jpg'
-              text='Every riddler has an answer'
-              label='Dictionary'
-              path='/Dictionary'
+              text='See your achivments and track your progress'
+              label='Profile'
+              path='/Profile'
             />
           </ul>
           

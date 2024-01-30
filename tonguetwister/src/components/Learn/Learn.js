@@ -4,7 +4,7 @@ import './Learn.css';
 
 export default function Learn() {
   const [introText, setIntroText] = useState('');
-  const [quizzes, setQuizzes] = useState([]);
+
 
   useEffect(() => {
     // Fetch introduction text from the backend
@@ -12,60 +12,47 @@ export default function Learn() {
       .then((response) => response.json())
       .then((data) => setIntroText(data.text))
       .catch((error) => console.error('Error fetching introduction:', error));
-
-    // Fetch quizzes from the backend
-    fetch('http://localhost:8081/api/quizzes')
-      .then((response) => response.json())
-      .then((data) => setQuizzes(data))
-      .catch((error) => console.error('Error fetching quizzes:', error));
-  }, []);
+  });
 
   return (
-    <div className="container">
+    <div className="containerLearn">
       <h1>Welcome to English Learning Journey!</h1>
       {/* Display the fetched introduction text */}
       <p>{introText}</p>
 
-      <h2>What You Will Learn</h2>
-      <p>
-        In this course, you will explore a range of tenses, allowing you to express
-        yourself accurately and confidently in different situations. From the simplicity
-        of the present simple to the nuances of the past perfect continuous, we cover it all.
-      </p>
+      <h2>Ce vei învăța</h2>
+  <p>
+    În acest curs, vei explora o gamă de timpuri verbale, permițându-ți să te exprimi
+    în mod precis și încrezător în diferite situații. De la simplitatea
+    prezentului simplu la nuanțele trecutului perfect continuu, acoperim totul.
+  </p>
 
-      <h3>Key Tenses Covered:</h3>
-      <ul>
-        <li>Present Simple</li>
-        <li>Present Continuous</li>
-        <li>Present Perfect</li>
-        <li>Present Perfect Continuous</li>
-        <li>Past Simple</li>
-        <li>Past Continuous</li>
-        <li>Past Perfect</li>
-        <li>Past Perfect Continuous</li>
-      </ul>
+  <h3>Timpuri cheie acoperite:</h3>
+  <ul>
+    <li>Prezent simplu</li>
+    <li>Prezent continuu</li>
+    <li>Prezent perfect</li>
+    <li>Prezent perfect continuu</li>
+    <li>Trecut simplu</li>
+    <li>Trecut continuu</li>
+    <li>Trecut perfect</li>
+    <li>Trecut perfect continuu</li>
+  </ul>
 
-      <h2>How the Course Works</h2>
-      <p>
-        Each tense will be presented in a clear and concise manner, accompanied by
-        examples, exercises, and quizzes to reinforce your understanding. Our interactive
-        approach ensures that you not only grasp the rules but also apply them in real-life
-        scenarios.
-      </p>
+  <h2>Cum funcționează cursul</h2>
+  <p>
+    Fiecare timp verbal va fi prezentat într-un mod clar și concis, însoțit de
+    exemple, exerciții și teste pentru a-ți consolida înțelegerea. Abordarea noastră interactivă
+    asigură nu numai că înțelegi regulile, ci și că le aplici în situații de viață reală.
+  </p>
 
-      <h2>Get Ready to Dive In!</h2>
-      <p>
-        Start your English learning journey today. Whether you're aiming to improve your
-        conversational skills, enhance your writing, or prepare for language exams, this
-        course will provide you with the knowledge and practice you need.
-      </p>
+  <h2>Pregătește-te să te lansezi!</h2>
+  <p>
+    Începe călătoria ta de învățare a limbii engleze astăzi. Fie că îți propui să-ți îmbunătățești
+    abilitățile de conversație, să-ți îmbunătățești scrisul sau să te pregătești pentru examenele de limbă,
+    acest curs îți va oferi cunoștințele și practica de care ai nevoie.
+  </p>
 
-      <h2>Quizzes</h2>
-      <ul>
-        {quizzes.map((quiz) => (
-          <li key={quiz.quiz_id}>{quiz.quiz_name}</li>
-        ))}
-      </ul>
-    </div>
+</div>
   );
 }
