@@ -8,7 +8,11 @@ const Register = ({ handleLoginButtonClick }) => {
   const [email, setEmail] = useState('');
   const navigate = useNavigate();
 
-  const handleRegister = async () => {
+  const handleRegister = async (e) => {
+    if (!username || !password || !email) {
+      alert("Please fill in all fields");
+      return; // Exit the function if any field is empty
+    }
     try {
       const response = await fetch('http://localhost:8081/api/register', {
         method: 'POST',
@@ -28,6 +32,7 @@ const Register = ({ handleLoginButtonClick }) => {
     } catch (error) {
       console.error('Error during registration:', error);
     }
+  
   };
 
   return (
@@ -39,6 +44,7 @@ const Register = ({ handleLoginButtonClick }) => {
         value={username}
         onChange={(e) => setUsername(e.target.value)}
         className="inputbox" 
+        required
       />
 
       <label htmlFor="password">Password:</label>
@@ -48,6 +54,7 @@ const Register = ({ handleLoginButtonClick }) => {
         value={password}
         onChange={(e) => setPassword(e.target.value)}
         className="inputbox" 
+        required
       />
 
       <label htmlFor="email">Email:</label>
@@ -57,9 +64,10 @@ const Register = ({ handleLoginButtonClick }) => {
         value={email}
         onChange={(e) => setEmail(e.target.value)}
         className="inputbox"
+        required
       />
 
-      <button type="button" onClick={handleRegister}>
+      <button type="submit" onClick={handleRegister}>
         Register
       </button>
       <button className='button' onClick={handleLoginButtonClick}>

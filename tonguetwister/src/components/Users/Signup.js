@@ -19,7 +19,6 @@ export default function Signup() {
 
   return (
     <div>
-      <h2>Create an account to get started:</h2>
       <div className='container'>
         {showOne ? (
           <div className='registration'>
